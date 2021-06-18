@@ -6,6 +6,7 @@ const audio = document.querySelector("#audio");
 function playSound() {
   // plays sound
   audio.play();
+  console.log("finished");
 }
 
 function updateTimer() {
@@ -32,6 +33,7 @@ function updateTimer() {
   if (minutesValue == -1) {
     playSound();
     clearInterval(handle);
+
     secondsTimer.textContent = "00";
     minutesTimer.textContent = "00";
   }
