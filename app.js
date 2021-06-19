@@ -3,19 +3,25 @@ const minutesTimer = document.querySelector(".minute");
 const secondsTimer = document.querySelector(".seconds");
 const audio = document.querySelector("#audio");
 const button = document.querySelector("button");
+const restartTimerSecondsValue = "06";
+const restartTimerMinutesValue = "00";
 var timerTime = 6 * 1000;
+var timerTime =
+  (Number(restartTimerMinutesValue) * 60 + Number(restartTimerSecondsValue)) *
+  1000;
+console.log(timerTime);
 function playSound() {
   // plays sound
-
   audio.play();
 
   console.log("finished");
 }
+
 function buttonOnReatart() {
   button.innerText = "RESTART";
   button.style.display = "block";
-  secondsTimer.textContent = "06";
-  minutesTimer.textContent = "00";
+  secondsTimer.textContent = restartTimerSecondsValue;
+  minutesTimer.textContent = restartTimerMinutesValue;
 
   updateTimer();
 }
@@ -53,7 +59,6 @@ button.addEventListener("click", () => {
   var handle = setInterval(updateTimer, 1000);
   setTimeout(() => {
     clearInterval(handle);
-    console.log("executed");
     buttonOnReatart();
   }, timerTime);
 });
