@@ -3,13 +3,15 @@ const minutesTimer = document.querySelector(".minute");
 const secondsTimer = document.querySelector(".seconds");
 const audio = document.querySelector("#audio");
 const button = document.querySelector("button");
-const restartTimerSecondsValue = "06";
-const restartTimerMinutesValue = "00";
-var timerTime = 6 * 1000;
+const restartTimerSecondsValue = secondsTimer.textContent;
+const restartTimerMinutesValue = minutesTimer.textContent;
+
 var timerTime =
-  (Number(restartTimerMinutesValue) * 60 + Number(restartTimerSecondsValue)) *
+  (Number(restartTimerMinutesValue) * 60 +
+    Number(restartTimerSecondsValue) +
+    1) *
   1000;
-console.log(timerTime);
+console.log(timerTime + " seconds");
 function playSound() {
   // plays sound
   audio.play();

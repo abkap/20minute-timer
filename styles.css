@@ -8,7 +8,7 @@
   --timer-font: rgb(65, 88, 165);
   --button-bg: rgb(94, 113, 224);
   --button-clr: orange;
-  --button-hover-bg: lightcyan;
+  --button-hover-bg: rgb(29, 52, 129);
 }
 
 body {
