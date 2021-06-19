@@ -2,15 +2,23 @@
   padding: 0;
   margin: 0;
 }
+:root {
+  --backgrond-timer: rgb(178, 161, 224);
+  --background-body: rgb(187, 183, 235);
+  --timer-font: rgb(65, 88, 165);
+  --button-bg: rgb(94, 113, 224);
+  --button-clr: orange;
+  --button-hover-bg: lightcyan;
+}
 
 body {
-  background-color: rgb(187, 183, 235);
+  background-color: var(--background-body);
 }
 
 .timer {
   font-family: sans-serif;
-  color: rgb(65, 88, 165);
-  background-color: rgb(178, 161, 224);
+  color: var(--timer-font);
+  background-color: var(--backgrond-timer);
   width: fit-content;
   padding: 10px;
   border-radius: 10px;
@@ -19,4 +27,26 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.button-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100vw;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.button-div button {
+  border: none;
+  height: 100%;
+  width: 100%;
+  background: var(--button-bg);
+  color: var(--button-clr);
+}
+
+.button-div button:hover {
+  background: var(--button-hover-bg);
 }

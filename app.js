@@ -2,11 +2,22 @@ const timer = document.querySelector(".timer");
 const minutesTimer = document.querySelector(".minute");
 const secondsTimer = document.querySelector(".seconds");
 const audio = document.querySelector("#audio");
-
+const button = document.querySelector("button");
+var timerTime = 6 * 1000;
 function playSound() {
   // plays sound
+
   audio.play();
+
   console.log("finished");
+}
+function buttonOnReatart() {
+  button.innerText = "RESTART";
+  button.style.display = "block";
+  secondsTimer.textContent = "06";
+  minutesTimer.textContent = "00";
+
+  updateTimer();
 }
 
 function updateTimer() {
@@ -32,11 +43,17 @@ function updateTimer() {
 
   if (minutesValue == -1) {
     playSound();
-    clearInterval(handle);
-
     secondsTimer.textContent = "00";
     minutesTimer.textContent = "00";
   }
 }
-
-var handle = setInterval(updateTimer, 1000);
+// run code
+button.addEventListener("click", () => {
+  button.style.display = "none";
+  var handle = setInterval(updateTimer, 1000);
+  setTimeout(() => {
+    clearInterval(handle);
+    console.log("executed");
+    buttonOnReatart();
+  }, timerTime);
+});
