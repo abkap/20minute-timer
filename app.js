@@ -48,7 +48,7 @@ function updateTimer() {
     }
     secondsTimer.textContent = 59;
   }
-  console.log(handle);
+
   if (minutesValue < 0) {
     playSound();
     secondsTimer.textContent = "00";
