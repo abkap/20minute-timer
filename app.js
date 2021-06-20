@@ -5,11 +5,11 @@ const audio = document.querySelector("#audio");
 const button = document.querySelector("button");
 const restartTimerSecondsValue = secondsTimer.textContent;
 const restartTimerMinutesValue = minutesTimer.textContent;
-
+var handle;
 var timerTime =
   (Number(restartTimerMinutesValue) * 60 +
     Number(restartTimerSecondsValue) +
-    1) *
+    2) *
   1000;
 console.log(timerTime + " seconds");
 function playSound() {
@@ -48,19 +48,22 @@ function updateTimer() {
     }
     secondsTimer.textContent = 59;
   }
-
-  if (minutesValue == -1) {
+  console.log(handle);
+  if (minutesValue < 0) {
     playSound();
     secondsTimer.textContent = "00";
     minutesTimer.textContent = "00";
+    // new
+    clearInterval(handle);
+    buttonOnReatart();
   }
 }
 // run code
 button.addEventListener("click", () => {
   button.style.display = "none";
-  var handle = setInterval(updateTimer, 1000);
-  setTimeout(() => {
-    clearInterval(handle);
-    buttonOnReatart();
-  }, timerTime);
+  handle = setInterval(updateTimer, 1000);
+  // setTimeout(() => {
+  //   clearInterval(handle);
+  //   buttonOnReatart();
+  // }, timerTime);
 });
