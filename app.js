@@ -62,8 +62,4 @@ function updateTimer() {
 button.addEventListener("click", () => {
   button.style.display = "none";
   handle = setInterval(updateTimer, 1000);
-  // setTimeout(() => {
-  //   clearInterval(handle);
-  //   buttonOnReatart();
-  // }, timerTime);
 });
