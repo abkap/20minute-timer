@@ -15,7 +15,7 @@ console.log(timerTime + " seconds");
 function playSound() {
   // plays sound
   audio.play();
-
+  // after completely executed
   console.log("finished");
 }
 
