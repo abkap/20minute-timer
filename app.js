@@ -1,3 +1,4 @@
+// 20 minute timer with vanila javascript
 const timer = document.querySelector(".timer");
 const minutesTimer = document.querySelector(".minute");
 const secondsTimer = document.querySelector(".seconds");
